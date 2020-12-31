@@ -1,0 +1,21 @@
+---
+input:
+  path: str()
+  file-extensions: list(str())
+output:
+  path: str()
+target:
+  max-uploaded-file: any(int(), null())
+  max-download-file: any(int(), null())
+  provider:
+    aws:
+      region: str()
+      bucket-name: str()
+      storage-class: str()
+job:
+  job-description: str(required=False)
+  runtime:
+    at:
+      - second: int(regex('\b([0-5][0-9]|60)\b'))
+      - minute: int(regex('\b([0-5][0-9]|60)\b'))
+      - hour: int(regex('^([0-2]?[0-4]|24)$'))

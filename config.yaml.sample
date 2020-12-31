@@ -1,0 +1,21 @@
+---
+input:
+  path: "./photos"
+  file-extensions:
+    - '.jpg'
+    - '.png'
+output:
+  path: "./dwn-photos"
+target:
+  provider:
+    aws:
+      region: "us-east-1"
+      bucket-name: "test-bucket"
+      storage-class: "STANDARD"
+job:
+  job-description: "test backup!"
+  runtime:
+    at:
+      - second: 1
+      - minute: 10
+      - hour: 2
