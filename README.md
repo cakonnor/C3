@@ -6,6 +6,8 @@ A pythonic CLI based backup utility for backing up a directory of choice to an A
 - Declaritive struture using yaml
 - Save objects automatically to storage class of choice (reduce object storage cost)
 - Hands free cron schduling (ie. Write new objects to cloud at interval specified)
+- Download all files from AWS S3 bucket
+- Download and upload file limit (optional)
 
 ## Dependicies
 All Dependicies can be found in ``` requirements.txt ```
@@ -21,7 +23,7 @@ optional arguments:
   -f CONFIG_FILE, --config-file CONFIG_FILE
                         Alternate location of config.yaml file. (optional parameter defaults to ./config.yaml)
 ```
-When using flag ``` -n ``` requires a config.yaml file in the C3 root directory. File that follows schema.yaml see config.yaml.sample for demo config file.
+When using flag ``` -n ```  or ``` -d ``` requires a config.yaml file in the C3 root directory. Sample config YAML file that follows schema.yaml see config.yaml.sample for demo config file.
 
 ## New Job (Upload)
 Creates new upload job using cron scheduler based on paramters given in ``` config.yaml ``` file.
@@ -62,8 +64,8 @@ aws
  ```
  ### AWS Parameters
 -  ``` region ``` region symbol name (optional = False)
--  ``` bucket-name ``` bucket name of aws S3 bucket, case and numeric sensitive optional = False)
-- ``` storage-class ``` allows for the following case senstive storage policy types optional = False); ``` 'STANDARD'|'REDUCED_REDUNDANCY'|'STANDARD_IA'|'ONEZONE_IA'|'INTELLIGENT_TIERING'|'GLACIER'|'DEEP_ARCHIVE'|'OUTPOSTS' ```
+-  ``` bucket-name ``` bucket name of aws S3 bucket, case and numeric sensitive (optional = False)
+- ``` storage-class ``` allows for the following case senstive storage policy types (optional = False); ``` 'STANDARD'|'REDUCED_REDUNDANCY'|'STANDARD_IA'|'ONEZONE_IA'|'INTELLIGENT_TIERING'|'GLACIER'|'DEEP_ARCHIVE'|'OUTPOSTS' ```
 #
 ## Config - Job
 ``` job ``` parameter outlines details corresponding to cron job schduling. All fields BUT ```job-desciption``` below are required
