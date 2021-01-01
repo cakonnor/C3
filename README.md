@@ -11,6 +11,8 @@ A pythonic CLI based backup utility for backing up a directory of choice to an A
 
 ## Dependicies
 All Dependicies can be found in ``` requirements.txt ```
+##
+Requires the use of the [AWS CLI](https://docs.aws.amazon.com/cli/) along with appropriate crendials to authenticate to AWS S3
 
 ## Usage
 ```
